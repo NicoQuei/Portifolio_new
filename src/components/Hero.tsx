@@ -79,13 +79,13 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex items-center gap-5 mt-6">
-            <a href="#" className="text-text-muted hover:text-primary transition-colors">
+            <a href="https://github.com/NicoQuei" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors">
               <Terminal size={22} />
             </a>
-            <a href="#" className="text-text-muted hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/nicoquei/" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors">
               <Briefcase size={22} />
             </a>
-            <a href="mailto:ola@nicolas.dev" className="text-text-muted hover:text-primary transition-colors">
+            <a href="mailto:nicolasqueirogapaix@gmail.com" className="text-text-muted hover:text-primary transition-colors">
               <Mail size={22} />
             </a>
           </motion.div>

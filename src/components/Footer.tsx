@@ -15,13 +15,13 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-text-muted hover:text-text-main transition-colors">
+          <a href="https://github.com/NicoQuei" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-main transition-colors">
             <Terminal size={20} />
           </a>
-          <a href="#" className="text-text-muted hover:text-text-main transition-colors">
+          <a href="https://www.linkedin.com/in/nicoquei/" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-main transition-colors">
             <Briefcase size={20} />
           </a>
-          <a href="mailto:ola@nicolas.dev" className="text-text-muted hover:text-text-main transition-colors">
+          <a href="mailto:nicolasqueirogapaix@gmail.com" className="text-text-muted hover:text-text-main transition-colors">
             <Mail size={20} />
           </a>
         </div>
