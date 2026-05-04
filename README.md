@@ -1,105 +1,46 @@
-# portfolio
-![GitHub stars](https://img.shields.io/github/stars/NicoQuei/Portifolio_new?style=social)
-![License](https://img.shields.io/badge/license-not%20specified-lightgrey)
-![Language](https://img.shields.io/badge/language-TypeScript-111827)
-![Package manager](https://img.shields.io/badge/package%20manager-npm-e11d48)
-A TypeScript, React, Tailwind CSS project hosted on GitHub.
-## Links
+# 🚀 My Personal Portfolio
 
-- Repository: [NicoQuei/Portifolio_new](https://github.com/NicoQuei/Portifolio_new)
-## Preview
-Add a screenshot, demo GIF, or deployment link here so visitors can understand the project quickly.
-## Project Snapshot
-| Item | Details |
-| --- | --- |
-| Repository | `NicoQuei/Portifolio_new` |
-| Project type | React single-page application |
-| Primary language | TypeScript |
-| Main stack | `TypeScript`, `React`, `Tailwind CSS`, `Framer Motion`, `Vite` |
-| Package manager | npm |
-| Default branch | `main` |
-## Detected Capabilities
-- Automated tests
-## Repository Signals
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-- Detected stack: TypeScript, React, Tailwind CSS, Framer Motion, Vite.
-- Key dependencies include react, react-dom, typescript, vite, tailwindcss, lucide-react.
-- Includes 4 package scripts for local development and maintenance.
+## 📌 Sobre o Projeto
 
-## Key Dependencies
+Este é o meu portfólio pessoal, desenvolvido com o objetivo de apresentar meus projetos, habilidades técnicas e trajetória como desenvolvedor. O foco principal foi criar uma interface **moderna, performática e responsiva**, utilizando as melhores práticas de desenvolvimento web.
 
-These packages stood out while scanning the project metadata:
+O projeto utiliza **React 19** e **Vite** para um ambiente de desenvolvimento ultra-rápido, e **Tailwind CSS** para uma estilização elegante e customizada.
 
-- `react`
-- `react-dom`
-- `typescript`
-- `vite`
-- `tailwindcss`
-- `lucide-react`
-- `framer-motion`
-- `gsap`
-- `lenis`
-- `@eslint/js`
-- `@tailwindcss/postcss`
-- `@vitejs/plugin-react`
-- `autoprefixer`
-- `eslint`
-
-## Repository Structure
-```text
-src/ - Application source code
-public/ - Static assets
-```
-## Important Files
-
-| Type | Path |
-| --- | --- |
-| Entry point | `src/App.tsx` |
-| Entry point | `src/main.tsx` |
-| Config | `package.json` |
-| Config | `tsconfig.json` |
-| Config | `vite.config.ts` |
-| Config | `postcss.config.js` |
-| Config | `tailwind.config.js` |
-
-## Getting Started
-Clone the repository:
-```bash
-git clone https://github.com/NicoQuei/Portifolio_new.git
-cd Portifolio_new
-```
-Install dependencies:
-```bash
-npm install
-```
-## Environment Variables
-
-No required environment variables were detected automatically. If the app relies on secrets, create a `.env` file and document each value here.
-
-## Run locally
-
-```bash
-npm run dev
-```
-
-## Build for production
-
-```bash
-npm run build
-```
-
-## Available Scripts
-
-| Script | Command |
-| --- | --- |
-| `dev` | `vite` |
-| `build` | `tsc -b && vite build` |
-| `lint` | `eslint .` |
-| `preview` | `vite preview` |
-
-## Contributing
-Contributions are welcome. Fork the repository, create a branch, commit your changes, and open a pull request with a clear description.
-## License
-No license was detected. Add a license before distributing this project.
 ---
-Generated with ReadmePilot.
+
+## ✨ Funcionalidades
+
+- 📱 **Design Responsivo:** Adaptado para dispositivos móveis, tablets e desktops.
+- 🎨 **Estilização Moderna:** Uso de gradientes suaves, animações e layout limpo.
+- 📂 **Showcase de Projetos:** Galeria interativa para exibir trabalhos realizados.
+- 🚀 **Performance Otimizada:** Carregamento rápido graças ao Vite e componentes leves.
+- ✉️ **Seção de Contato:** Integração para facilitar o networking.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+As seguintes ferramentas foram fundamentais na construção deste projeto:
+
+- **[React](https://reactjs.org/)** - Biblioteca JavaScript para construção de interfaces.
+- **[TypeScript](https://www.typescriptlang.org/)** - Superset JavaScript para tipagem estática e segurança.
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário para design rápido.
+- **[Vite](https://vitejs.dev/)** - Build tool de próxima geração.
+- **[Lucide React](https://lucide.dev/)** - Biblioteca de ícones leves e bonitos.
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+src/
+├── components/   # Componentes reutilizáveis (Header, Footer, Button, etc.)
+├── sections/     # Seções da página principal (Hero, About, Projects, Contact)
+├── assets/       # Imagens e arquivos estáticos
+├── styles/       # Configurações globais de CSS
+└── App.tsx       # Componente principal
