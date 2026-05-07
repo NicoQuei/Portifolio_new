@@ -12,15 +12,15 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    id: "auto-elite",
-    title: "Auto Elite",
-    category: "Web App",
-    description: "Sistema completo de concessionária de veículos premium com catálogo interativo, filtros avançados, comparador de carros, calculadora de financiamento e atendimento via chatbot com Inteligência Artificial integrada ao Google Gemini.",
-    tags: ["React 18", "Vite", "Tailwind CSS", "Gemini AI"],
-    imageUrl: "/auto-elite.png",
+    id: "cafeteria",
+    title: "Cafeteria",
+    category: "Landing Page",
+    description: "Landing page de uma cafeteria fictícia com design moderno, acolhedor e responsivo. Desenvolvida para apresentar o cardápio, produtos em destaque e informações do estabelecimento com uma interface atraente.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Vite"],
+    imageUrl: "/cafeteria.png",
     imagePosition: "left top",
-    link: "https://auto-elite-cars.vercel.app/",
-    github: "https://github.com/NicoQuei/Auto-Elite",
+    link: "https://cafeteria-mocha-ten.vercel.app",
+    github: "https://github.com/NicoQuei/Cafeteria",
   },
   {
     id: "eugenius",
