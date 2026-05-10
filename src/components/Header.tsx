@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
-
+  
   const navLinks = [
     { name: 'Início', href: '#home' },
     { name: 'Sobre', href: '#about' },

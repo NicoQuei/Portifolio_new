@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Briefcase, Mail, Bot, Sparkles, Cpu, Zap } from 'lucide-react';
+import { Terminal, Briefcase, Mail, Bot, Sparkles, Cpu, Zap, Camera, MessageCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
 
@@ -35,25 +35,35 @@ const Contact: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
-          
+
           {/* Social Links */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             className="lg:col-span-2 flex flex-col gap-6"
           >
-            <motion.a variants={itemVariants} href="mailto:nicolasqueirogapaix@gmail.com" className="flex items-center gap-4 p-6 bg-bg border border-border-color rounded-2xl hover:border-primary/50 transition-colors group">
+            <motion.a variants={itemVariants} href="https://wa.me/5585996941119" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 bg-bg border border-border-color rounded-2xl hover:border-primary/50 transition-colors group">
               <div className="w-12 h-12 bg-surface rounded-full flex items-center justify-center text-text-main group-hover:text-primary transition-colors">
-                <Mail size={20} />
+                <MessageCircle size={20} />
               </div>
               <div>
-                <h4 className="text-text-main font-semibold">E-mail</h4>
-                <span className="text-text-muted text-sm">nicolasqueirogapaix@gmail.com</span>
+                <h4 className="text-text-main font-semibold">WhatsApp</h4>
+                <span className="text-text-muted text-sm">(85) 99694-1119</span>
               </div>
             </motion.a>
-            
+
+            <motion.a variants={itemVariants} href="https://www.instagram.com/nicoqueip/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 bg-bg border border-border-color rounded-2xl hover:border-primary/50 transition-colors group">
+              <div className="w-12 h-12 bg-surface rounded-full flex items-center justify-center text-text-main group-hover:text-primary transition-colors">
+                <Camera size={20} />
+              </div>
+              <div>
+                <h4 className="text-text-main font-semibold">Instagram</h4>
+                <span className="text-text-muted text-sm">@nicoqueip</span>
+              </div>
+            </motion.a>
+
             <motion.a variants={itemVariants} href="https://www.linkedin.com/in/nicoquei/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 bg-bg border border-border-color rounded-2xl hover:border-primary/50 transition-colors group">
               <div className="w-12 h-12 bg-surface rounded-full flex items-center justify-center text-text-main group-hover:text-primary transition-colors">
                 <Briefcase size={20} />
@@ -73,10 +83,20 @@ const Contact: React.FC = () => {
                 <span className="text-text-muted text-sm">NicoQuei</span>
               </div>
             </motion.a>
+
+            <motion.a variants={itemVariants} href="mailto:nicolasqueirogapaix@gmail.com" className="flex items-center gap-4 p-6 bg-bg border border-border-color rounded-2xl hover:border-primary/50 transition-colors group">
+              <div className="w-12 h-12 bg-surface rounded-full flex items-center justify-center text-text-main group-hover:text-primary transition-colors">
+                <Mail size={20} />
+              </div>
+              <div>
+                <h4 className="text-text-main font-semibold">E-mail</h4>
+                <span className="text-text-muted text-sm">nicolasqueirogapaix@gmail.com</span>
+              </div>
+            </motion.a>
           </motion.div>
 
           {/* Current Focus Cards */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
