@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,37 +43,54 @@ const Header: React.FC = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-bg/80 backdrop-blur-md border-b border-border-color py-4' : 'bg-transparent py-6'
+          isScrolled
+            ? 'bg-bg/80 backdrop-blur-md border-b border-border-color py-4'
+            : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#home" className="text-xl font-bold tracking-tight text-text-main">
-            Nicolas<span className="text-primary">.</span>
+          <a
+            href="#home"
+            className={`transition-colors ${
+              isScrolled ? 'text-text-main' : 'text-white drop-shadow-lg'
+            }`}
+          >
+            <Logo className="text-xl" />
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
-                className="text-text-muted hover:text-text-main text-sm font-medium transition-colors relative group"
+                className={`text-sm font-medium transition-colors relative group ${
+                  isScrolled
+                    ? 'text-text-muted hover:text-text-main'
+                    : 'text-white/90 hover:text-white drop-shadow-md'
+                }`}
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
-            <a 
-              href="#contact" 
-              className="px-5 py-2 bg-text-main text-bg rounded-md text-sm font-semibold hover:bg-white/90 transition-colors"
+            <a
+              href="#contact"
+              className={`px-5 py-2 rounded-md text-sm font-semibold transition-colors ${
+                isScrolled
+                  ? 'bg-text-main text-bg hover:bg-white/90'
+                  : 'bg-white text-bg hover:bg-white/90 shadow-lg'
+              }`}
             >
               Fale comigo
             </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden text-text-main p-2 relative z-[80]"
+          <button
+            className={`md:hidden p-2 relative z-[80] transition-colors ${
+              isScrolled ? 'text-text-main' : 'text-white drop-shadow-md'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"
           >

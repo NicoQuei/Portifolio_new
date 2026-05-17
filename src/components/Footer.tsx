@@ -1,14 +1,13 @@
 import React from 'react';
 import { Terminal, Briefcase, Mail } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer: React.FC = () => {
   return (
     <footer className="py-10 bg-bg border-t border-border-color">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <span className="text-xl font-bold tracking-tight text-text-main">
-            Nicolas<span className="text-primary">.</span>
-          </span>
+          <Logo className="text-xl text-text-main" />
           <span className="text-text-muted text-sm">
             © {new Date().getFullYear()} Desenvolvido por Nicolas.
           </span>
