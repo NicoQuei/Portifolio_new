@@ -35,7 +35,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-32 px-6 bg-surface border-y border-border-color">
+    <section id="about" className="py-32 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -70,7 +70,7 @@ const About: React.FC = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -10, scale: 1.05 }}
-                className={`p-6 bg-bg border border-border-color rounded-xl transition-colors hover:border-primary/50 hover:shadow-[0_10px_30px_rgba(14,165,233,0.1)] ${index === 2 ? 'sm:col-span-2' : ''}`}
+                className={`p-6 bg-surface/20 backdrop-blur-sm border border-border-color rounded-xl transition-colors hover:border-primary/50 hover:shadow-[0_10px_30px_rgba(14,165,233,0.1)] ${index === 2 ? 'sm:col-span-2' : ''}`}
               >
                 <div className="w-12 h-12 bg-surface rounded-lg flex items-center justify-center mb-4 border border-border-color">
                   {item.icon}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
@@ -56,10 +56,10 @@ export function ParallaxComponent() {
   }, []);
 
   return (
-    <div className="relative w-full bg-[#050505] overflow-hidden" ref={parallaxRef}>
-      <section className="relative w-full h-[150vh]">
+    <div className="relative w-full bg-transparent overflow-hidden" ref={parallaxRef}>
+      <section className="relative w-full h-[170vh]">
         <div className="sticky top-0 w-full h-screen overflow-hidden">
-          <div className="absolute top-[-100px] w-full h-[100px] bg-[#050505] z-50"></div>
+          <div className="absolute top-[-100px] w-full h-[100px] bg-transparent z-50"></div>
           
           <div data-parallax-layers className="absolute inset-0 w-full h-full">
             {/* Layer 1 — Foto real de praia tropical */}
@@ -68,13 +68,13 @@ export function ParallaxComponent() {
               loading="eager"
               data-parallax-layer="1"
               alt=""
-              className="absolute bottom-0 left-0 w-full h-[120%] object-cover object-center pointer-events-none"
+              className="absolute bottom-0 left-0 w-full h-[120%] object-cover object-center pointer-events-none opacity-50"
             />
 
             {/* Layer 2 — Overlay para contraste do texto */}
             <div
               data-parallax-layer="2"
-              className="absolute bottom-0 left-0 w-full h-[120%] pointer-events-none bg-gradient-to-b from-black/20 via-black/40 to-[#050505]"
+              className="absolute bottom-0 left-0 w-full h-[120%] pointer-events-none bg-gradient-to-b from-transparent via-black/40 to-black/80"
             />
 
             {/* Layer 3 — Texto */}
@@ -94,12 +94,12 @@ export function ParallaxComponent() {
               width="800"
               data-parallax-layer="4"
               alt=""
-              className="absolute bottom-[-15%] left-0 w-full h-[120%] object-cover object-bottom pointer-events-none z-20"
+              className="absolute bottom-[-30%] left-0 w-full h-[120%] object-cover object-bottom pointer-events-none z-20"
             />
           </div>
           
           {/* Fade to background color at the bottom */}
-          <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-[#050505] to-transparent z-30 pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-full h-[35vh] bg-gradient-to-t from-black/80 to-transparent z-30 pointer-events-none"></div>
         </div>
       </section>
       

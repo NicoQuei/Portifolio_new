@@ -182,7 +182,7 @@ const Projects: React.FC = () => {
 
   if (!isDesktop) {
     return (
-      <section id="projects" className="py-24 bg-bg border-y border-border-color overflow-hidden">
+      <section id="projects" className="py-24 bg-transparent overflow-hidden">
         <div className="px-6 mb-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             <h2 className="text-sm font-semibold tracking-widest text-primary uppercase mb-4">Portfólio</h2>
@@ -204,7 +204,7 @@ const Projects: React.FC = () => {
   }
 
   return (
-    <section id="projects" ref={targetRef} className="relative bg-bg border-y border-border-color" style={{ height: `${totalSlides * 100}vh` }}>
+    <section id="projects" ref={targetRef} className="relative bg-transparent" style={{ height: `${totalSlides * 100}vh` }}>
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <motion.div style={{ x }} className="flex">
 

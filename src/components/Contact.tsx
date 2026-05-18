@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
 
 
   return (
-    <section id="contact" className="py-32 px-6 bg-surface border-y border-border-color">
+    <section id="contact" className="py-32 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

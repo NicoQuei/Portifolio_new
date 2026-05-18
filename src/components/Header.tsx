@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-bg/80 backdrop-blur-md border-b border-border-color py-4'
+            ? 'bg-bg-solid/80 backdrop-blur-md border-b border-border-color py-4'
             : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-6'
         }`}
       >

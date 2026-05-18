@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#050505',
+        bg: 'transparent',
+        'bg-solid': '#050505',
         surface: '#0a0a0a',
         'surface-hover': '#111111',
         primary: '#0ea5e9', /* Azul tecnológico sutil, como pedido */

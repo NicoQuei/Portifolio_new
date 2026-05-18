@@ -21,7 +21,7 @@ const Experience: React.FC = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} id="experience" className="py-32 px-6 bg-bg overflow-hidden">
+    <section ref={containerRef} id="experience" className="py-32 px-6 bg-transparent overflow-hidden">
       <div className="max-w-4xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
