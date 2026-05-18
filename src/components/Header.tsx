@@ -42,19 +42,14 @@ const Header: React.FC = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
           isScrolled
-            ? 'bg-bg-solid/80 backdrop-blur-md border-b border-border-color py-4'
-            : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-6'
+            ? 'bg-bg-solid/85 border-b border-border-color py-4'
+            : 'bg-bg-solid/55 border-b border-border-color/40 py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a
-            href="#home"
-            className={`transition-colors ${
-              isScrolled ? 'text-text-main' : 'text-white drop-shadow-lg'
-            }`}
-          >
+          <a href="#home" className="text-text-main transition-colors">
             <Logo className="text-xl" />
           </a>
 
@@ -64,11 +59,7 @@ const Header: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors relative group ${
-                  isScrolled
-                    ? 'text-text-muted hover:text-text-main'
-                    : 'text-white/90 hover:text-white drop-shadow-md'
-                }`}
+                className="text-sm font-medium text-text-muted hover:text-text-main transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -76,11 +67,7 @@ const Header: React.FC = () => {
             ))}
             <a
               href="#contact"
-              className={`px-5 py-2 rounded-md text-sm font-semibold transition-colors ${
-                isScrolled
-                  ? 'bg-text-main text-bg hover:bg-white/90'
-                  : 'bg-white text-bg hover:bg-white/90 shadow-lg'
-              }`}
+              className="px-5 py-2 rounded-md text-sm font-semibold bg-text-main text-bg hover:bg-white/90 transition-colors"
             >
               Fale comigo
             </a>
@@ -88,9 +75,7 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={`md:hidden p-2 relative z-[80] transition-colors ${
-              isScrolled ? 'text-text-main' : 'text-white drop-shadow-md'
-            }`}
+            className="md:hidden p-2 relative z-[80] text-text-main transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"
           >
