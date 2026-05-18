@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, ArrowRight } from 'lucide-react';
-import { projectsData } from '../data/projects';
+import { projectsData, type Project } from '../data/projects';
 import MagneticButton from '../animations/MagneticButton';
 
 /* ─── Fundo decorativo leve ─── */
@@ -25,7 +25,7 @@ const SectionBackground: React.FC<{ accent?: string }> = ({ accent = '#0ea5e9' }
 );
 
 /* ─── Card estilo revista/editorial ─── */
-const ProjectCard: React.FC<{ project: any; index: number }> = ({ project, index }) => {
+const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
   return (
     <div className="w-full lg:w-screen h-[90vh] lg:h-screen flex items-center justify-center p-4 md:p-8 lg:p-12 flex-shrink-0 relative">
       <SectionBackground accent="#0ea5e9" />

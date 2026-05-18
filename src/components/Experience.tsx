@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { experienceData } from '../data/experience';
 import { GraduationCap, Code, Briefcase, Bot } from 'lucide-react';
+import { Component as EtherealShadow } from '@/components/ui/etheral-shadow';
 
 const iconMap: Record<string, React.ReactNode> = {
   GraduationCap: <GraduationCap size={18} className="text-bg" />,
@@ -21,7 +22,15 @@ const Experience: React.FC = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} id="experience" className="py-32 px-6 bg-transparent overflow-hidden">
+    <section ref={containerRef} id="experience" className="relative isolate py-32 px-6 bg-transparent overflow-hidden">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <EtherealShadow
+          color="rgba(14, 165, 233, 0.5)"
+          animation={{ scale: 60, speed: 5 }}
+          noise={{ opacity: 0.4, scale: 1.2 }}
+          sizing="fill"
+        />
+      </div>
       <div className="max-w-4xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -8,7 +8,7 @@ const GLSLHills = ({ width = '100%', height = '100%', cameraZ = 125, planeSize =
   useEffect(() => {
     // Plane class
     class Plane {
-      uniforms: any;
+      uniforms: Record<string, { type: string, value: number }>;
       mesh: THREE.Mesh;
       time: number;
 
@@ -21,8 +21,9 @@ const GLSLHills = ({ width = '100%', height = '100%', cameraZ = 125, planeSize =
       }
 
       createMesh() {
+        const segments = Math.max(32, Math.floor(planeSize / 2));
         return new THREE.Mesh(
-          new THREE.PlaneGeometry(planeSize, planeSize, planeSize, planeSize),
+          new THREE.PlaneGeometry(planeSize, planeSize, segments, segments),
           new THREE.RawShaderMaterial({
             uniforms: this.uniforms,
             vertexShader: `
@@ -168,6 +169,7 @@ const GLSLHills = ({ width = '100%', height = '100%', cameraZ = 125, planeSize =
 
     const initial = getSize();
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current!, antialias: false, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, initial.w / initial.h, 1, 10000);
     const clock = new THREE.Clock();
@@ -185,10 +187,22 @@ const GLSLHills = ({ width = '100%', height = '100%', cameraZ = 125, planeSize =
       renderer.render(scene, camera);
     };
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
     const renderLoop = () => {
       render();
       animationFrameId = requestAnimationFrame(renderLoop);
+    };
+
+    const startLoop = () => {
+      if (animationFrameId) return;
+      clock.getDelta();
+      renderLoop();
+    };
+
+    const stopLoop = () => {
+      if (!animationFrameId) return;
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = 0;
     };
 
     const init = () => {
@@ -197,7 +211,6 @@ const GLSLHills = ({ width = '100%', height = '100%', cameraZ = 125, planeSize =
       camera.position.set(0, 16, cameraZ);
       camera.lookAt(new THREE.Vector3(0, 28, 0));
       scene.add(plane.mesh);
-      renderLoop();
     };
 
     init();
@@ -205,9 +218,26 @@ const GLSLHills = ({ width = '100%', height = '100%', cameraZ = 125, planeSize =
     const ro = new ResizeObserver(resize);
     ro.observe(container);
 
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) startLoop();
+        else stopLoop();
+      },
+      { rootMargin: '200px' }
+    );
+    io.observe(container);
+
+    const onVisibility = () => {
+      if (document.hidden) stopLoop();
+      else if (container.getBoundingClientRect().top < window.innerHeight) startLoop();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
     return () => {
       ro.disconnect();
-      cancelAnimationFrame(animationFrameId);
+      io.disconnect();
+      document.removeEventListener('visibilitychange', onVisibility);
+      stopLoop();
       renderer.dispose();
     };
   }, [cameraZ, planeSize, speed]);

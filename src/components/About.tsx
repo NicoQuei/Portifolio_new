@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { LayoutTemplate, Code2, Smartphone } from 'lucide-react';
 
 const About: React.FC = () => {
@@ -21,7 +21,7 @@ const About: React.FC = () => {
     }
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -29,7 +29,7 @@ const About: React.FC = () => {
     }
   };
 
-  const cardVariants: any = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50, scale: 0.8 },
     visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', bounce: 0.5, duration: 1 } }
   };

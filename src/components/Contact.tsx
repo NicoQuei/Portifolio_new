@@ -1,15 +1,15 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Terminal, Briefcase, Mail, Bot, Sparkles, Cpu, Zap, Camera, MessageCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
 
-  const itemVariants: any = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", bounce: 0.4, duration: 1 } }
   };
