@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
 import SmoothScroll from './animations/SmoothScroll';
-import { GLSLHills } from './components/ui/glsl-hills';
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -23,12 +23,7 @@ function App() {
 
           <main>
             <Hero />
-            <div className="relative isolate overflow-hidden">
-              <div className="absolute inset-0 -z-10 pointer-events-none">
-                <GLSLHills speed={0.5} />
-              </div>
-              <About />
-            </div>
+            <About />
             <Skills />
             <Projects />
             <Experience />

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Terminal, Briefcase, Mail } from 'lucide-react';
 import Logo from './Logo';
+import { GLSLHills } from './ui/glsl-hills';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-10 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="relative py-24 mt-12 bg-transparent overflow-hidden isolate border-t border-white/5">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <GLSLHills speed={0.5} />
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-bg-solid to-transparent"></div>
+      </div>
+
+      <div className="relative z-20 max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
           <Logo className="text-xl text-text-main" />
           <span className="text-text-muted text-sm">
